@@ -5,7 +5,7 @@ Overview
 ===============================================================================
 A collection of simple utility SAS macros to speed up data exploration.
 
-See **Quick Start** and **Installation** below.
+See [Quick Start](#quick-start) and [Installation](#Installation) below.
 
 Feel free to get in touch/send pull requests with ideas for improvements.
 
@@ -14,11 +14,11 @@ Feel free to get in touch/send pull requests with ideas for improvements.
 Contents
 ===============================================================================
 * [Quick Start](#quick-start)
-* Parameter Dictionary 
-* Details
-* Installation
-* Tests
-* Inspirations
+* [Parameter Dictionary](#Parameter-Dictionary)
+* [Details](#Details)
+* [Installation](#installation)
+* [Tests](#tests)
+* [Inspirations](#inspirations)
 
 
 

@@ -88,6 +88,11 @@ macro that creates and prints a blank dataset and also resets titles
 macro (mostly shell script) to save a (t)ext warning to an output text
 (f)ile
 
+`%get_prog_name();`
+
+macro that obtains the short name, without `.sas`, of the current SAS
+program
+
 
 Parameter Dictionary
 ===============================================================================

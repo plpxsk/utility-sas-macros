@@ -1,0 +1,12 @@
+## https://github.com/github/gitignore/blob/master/R.gitignore
+# junk
+.DS_Store
+
+# emacs temp files
+*~
+\#*
+.#*
+\#*\#
+
+
+

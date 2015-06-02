@@ -1,5 +1,5 @@
 # Utility SAS macros
-Pawel Paczuski [AMA!] pavopax.com
+Pawel Paczuski [AMA!] [pavopax.com](http://www.pavopax.com)
 
 Overview
 ===============================================================================
@@ -13,13 +13,10 @@ Feel free to get in touch/send pull requests with ideas for improvements.
 Contents
 ===============================================================================
 * Quick Start
-
 * Parameter Dictionary 
 * Details
 * Installation
-
 * Tests
-
 * Inspirations
 
 

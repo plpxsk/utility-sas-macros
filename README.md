@@ -3,8 +3,9 @@ Pawel Paczuski [AMA!] [pavopax.com](http://www.pavopax.com)
 
 Overview
 ===============================================================================
-A collection of simple utility SAS macros to speed up data exploration
-See **Quick Look** and **Installation** below.
+A collection of simple utility SAS macros to speed up data exploration.
+
+See **Quick Start** and **Installation** below.
 
 Feel free to get in touch/send pull requests with ideas for improvements.
 
@@ -12,7 +13,7 @@ Feel free to get in touch/send pull requests with ideas for improvements.
 
 Contents
 ===============================================================================
-* Quick Start
+* [Quick Start](#quick-start)
 * Parameter Dictionary 
 * Details
 * Installation

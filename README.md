@@ -26,6 +26,7 @@ Quick Start
 These macros work best in batch (unix) mode.
 
 Many parameters do not need to be specified. Both of the following will work:
+
 	%freq(d=visits, v=type);
 	%freq(visits, type);
 
@@ -44,39 +45,47 @@ doing, since they are wrapped with:
 
 > shown with most common parameters. details below
 
-%contents(d);   
-	macro to run proc contents on a (d)ataset
+`%contents(d);`
 
-%count(d,v);  
-	macro to count unique and total observations (default: v=patid) in
-    a (d)ataset
+macro to run proc contents on a (d)ataset
 
-%freq(d,v);  
-	macro to do simple proc freq of some (v)ariables in a (d)ataset
+`%count(d,v);` 
 
-%overview(d);  
-	runs all of the following on a (d)ataset: %contents,
-	%freqmeans[CBAR], %count, %print, separated by %blank
+macro to count unique and total observations (default: v=patid) in a
+(d)ataset
 
-%print(d);  
-	macro to do simple proc print of a (d)ataset
- 
-%printobs(d,n=100);  
-	macro to run proc print with <by patid; id patid;> on a (d)ataset
+`%freq(d,v);`
 
-%sort(d,v);  
-	macro to do simple proc sort by (v)ariable in a (d)ataset
+macro to do simple proc freq of some (v)ariables in a (d)ataset
+
+`%overview(d);`
+
+runs all of the following on a (d)ataset: %contents, %freqmeans[CBAR],
+%count, %print, separated by %blank
+
+`%print(d);`
+
+macro to do simple proc print of a (d)ataset
+
+`%printobs(d,n=100);`
+
+macro to run proc print with <by patid; id patid;> on a (d)ataset
+
+`%sort(d,v);`
+
+macro to do simple proc sort by (v)ariable in a (d)ataset
 
 
 ### miscellaneous
 
-%blank();  
-	macro that creates and prints a blank dataset and also resets
-    titles
+`%blank();`
 
-%echo(t,f);  
-	macro (mostly shell script) to save a (t)ext warning to an output
-    text (f)ile
+macro that creates and prints a blank dataset and also resets titles
+
+`%echo(t,f);`
+
+macro (mostly shell script) to save a (t)ext warning to an output text
+(f)ile
 
 
 Parameter Dictionary

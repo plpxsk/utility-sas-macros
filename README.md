@@ -1,4 +1,4 @@
-### Utility SAS macros
+# Utility SAS macros
 Pawel Paczuski [AMA!] pavopax.com
 
 Overview
@@ -13,10 +13,14 @@ Feel free to get in touch/send pull requests with ideas for improvements.
 Contents
 ===============================================================================
 * Quick Start
+
 * Parameter Dictionary 
 * Details
 * Installation
+
 * Tests
+
+* Inspirations
 
 
 
@@ -96,6 +100,15 @@ Details
 
 Installation
 ===============================================================================
+Copy the /macros folder and its contents to a directory of your choice.
+
+You can include individual macros with:
+	%include "count.sas";
+
+Or add them to your autocalls (get help from an administrator)
+
+
+
 
 Tests
 ===============================================================================
@@ -110,8 +123,7 @@ tests the following
 
 
 
-
-
-
-
-
+INSPIRATIONS
+===============================================================================
+Hadley Wickham
+R 

@@ -41,9 +41,9 @@ doing, since they are wrapped with:
 
 
 
-### main collection
+### Main Collection
 
-> shown with most common parameters. details below
+*shown with most common parameters. details below*
 
 `%contents(d);`
 
@@ -69,14 +69,14 @@ macro to do simple proc print of a (d)ataset
 
 `%printobs(d,n=100);`
 
-macro to run proc print with <by patid; id patid;> on a (d)ataset
+macro to run proc print with `by patid; id patid;` on a (d)ataset
 
 `%sort(d,v);`
 
 macro to do simple proc sort by (v)ariable in a (d)ataset
 
 
-### miscellaneous
+### Miscellaneous
 
 `%blank();`
 
@@ -91,6 +91,7 @@ macro (mostly shell script) to save a (t)ext warning to an output text
 Parameter Dictionary
 ===============================================================================
 d = dataset
+
 v = variable
 
 [and others]
@@ -106,9 +107,10 @@ Details
 
 Installation
 ===============================================================================
-Copy the /macros folder and its contents to a directory of your choice.
+Copy the `/macros` folder and its contents to a directory of your choice.
 
 You can include individual macros with:
+
 	%include "count.sas";
 
 Or add them to your autocalls (get help from an administrator)
@@ -129,7 +131,9 @@ tests the following
 
 
 
-INSPIRATIONS
+Inspirations
 ===============================================================================
+
 Hadley Wickham
+
 R 

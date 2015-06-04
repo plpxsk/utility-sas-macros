@@ -1,5 +1,5 @@
 # Utility SAS macros
-Pawel Paczuski [AMA!] [pavopax.com](http://www.pavopax.com)
+Pawel Paczuski [AMA] [pavopax.com](http://www.pavopax.com)
 
 Overview
 ===============================================================================
@@ -24,25 +24,15 @@ Contents
 
 Quick Start
 ===============================================================================
-These macros work best in batch (unix) mode.
-
-Many parameters do not need to be specified. Both of the following will work:
-
-	%freq(d=visits, v=type);
-	%freq(visits, type);
+*See bottom for some quick notes*
 
 
-By reviewing the SAS log, you can see exactly what the macros are
-doing, since they are wrapped with:
+## There are three collections of these macros:
+1. Printing - print output to SAS listing (.lst)
+2. Data Manipulation
+3. Miscellaneous
 
-    options mprint;  
-    ...  
-    options nomprint;  
-
-
-
-
-### Main Collection
+### (1) Printing
 
 *shown with most common parameters. details below*
 
@@ -76,8 +66,14 @@ macro to run proc print with `by patid; id patid;` on a (d)ataset
 
 macro to do simple proc sort by (v)ariable in a (d)ataset
 
+### (2) Data Manipulation
 
-### Miscellaneous
+`%merge(d1,d2,by,out);`
+
+macro to do simple data step merge of datasets d1 and d2 by (v)ariable
+
+
+### (3) Miscellaneous
 
 `%blank();`
 
@@ -92,6 +88,25 @@ macro (mostly shell script) to save a (t)ext warning to an output text
 
 macro that obtains the short name, without `.sas`, of the current SAS
 program
+
+
+
+
+## Notes
+Many parameters do not need to be specified. Both of the following will work:
+
+	%freq(d=visits, v=type);
+	%freq(visits, type);
+
+
+By reviewing the SAS log, you can see exactly what the macros are
+doing, since they are wrapped with:
+
+    options mprint;  
+    ...  
+    options nomprint;  
+
+
 
 
 Parameter Dictionary

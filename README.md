@@ -38,39 +38,39 @@ Quick Start
 
 `%contents(d);`
 
-macro to run proc contents on a (d)ataset
+macro to run proc contents on a [d]ataset
 
 `%count(d,v);` 
 
-macro to count unique and total observations (default: v=patid) in a
-(d)ataset
+macro to count unique and total observations [default: v=patid] in a
+[d]ataset
 
 `%freq(d,v);`
 
-macro to do simple proc freq of some (v)ariables in a (d)ataset
+macro to do simple proc freq of some [v]ariables in a [d]ataset
 
 `%overview(d);`
 
-runs all of the following on a (d)ataset: %contents, %freqmeans[CBAR],
+runs all of the following on a [d]ataset: %contents, %freqmeans[CBAR],
 %count, %print, separated by %blank
 
 `%print(d);`
 
-macro to do simple proc print of a (d)ataset
+macro to do simple proc print of a [d]ataset
 
 `%printobs(d,n=100);`
 
-macro to run proc print with `by patid; id patid;` on a (d)ataset
+macro to run proc print with `by patid; id patid;` on a [d]ataset
 
 `%sort(d,v);`
 
-macro to do simple proc sort by (v)ariable in a (d)ataset
+macro to do simple proc sort by [v]ariable in a [d]ataset
 
 ### (2) Data Manipulation
 
 `%merge(d1,d2,by,out);`
 
-macro to do simple data step merge of datasets d1 and d2 by (v)ariable
+macro to do simple data step merge of datasets d1 and d2 by [v]ariable
 
 
 ### (3) Miscellaneous
@@ -81,14 +81,17 @@ macro that creates and prints a blank dataset and also resets titles
 
 `%echo(t,f);`
 
-macro (mostly shell script) to save a (t)ext warning to an output text
-(f)ile
+macro (mostly shell script) to save a [t]ext warning to an output text
+[f]ile
 
 `%get_prog_name();`
 
 macro that obtains the short name, without `.sas`, of the current SAS
 program
 
+
+`%test(v,condition);`
+macro that runs [condition] when [v]ariable is equal to 1
 
 
 

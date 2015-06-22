@@ -27,7 +27,7 @@ Quick Start
 *See bottom for some quick notes*
 
 
-## There are three collections of these macros:
+## The macros are divided into 3 types:  
 1. Printing - print output to SAS listing (.lst)
 2. Data Manipulation
 3. Miscellaneous
@@ -62,15 +62,17 @@ macro to do simple proc print of a [d]ataset
 
 macro to run proc print with `by patid; id patid;` on a [d]ataset
 
-`%sort(d,v);`
-
-macro to do simple proc sort by [v]ariable in a [d]ataset
 
 ### (2) Data Manipulation
 
 `%merge(d1,d2,by,out);`
 
 macro to do simple data step merge of datasets d1 and d2 by [v]ariable
+
+`%sort(d,v, out=0);`
+
+macro to do simple proc sort by [v]ariable in a [d]ataset, optionally
+outputting as [out]
 
 
 ### (3) Miscellaneous

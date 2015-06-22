@@ -4,11 +4,11 @@
 /* 
 /* PURPOSE:
     runs all of the following on a (d)ataset:
+    %count
     %contents,
     %freqmeans[CBAR]
-    %count
     %print(n=40)
-        separated by %blank
+        all of these separated by %blank
 
 /* 
 /* SOURCE PRGM:    NONE
@@ -35,13 +35,13 @@
 /* c = which variable to pass to %count()*/
 /* printobs = instead of print, do printobs? 0 = no, 1 = yes*/
 %MACRO overview(d,n=40,printobs=0,c=patid);
-    options mprint;
     
     title "";
     title2 "";
-    title5 "XX##### #######   (1/3) CONTENTS      ####### ####### ####### #######";
+    title5 "XX##### #######   (1/3) COUNT + CONTENTS      ####### ####### ####### #######";
     %blank();
     
+    %count(&D,v=&C);
     %contents(&D);
 
     title "";
@@ -53,10 +53,9 @@
 
     title "";
     title2 "";
-    title5 "XX##### #######   (3/3) COUNT + PRINT(OBS)      ####### ####### ####### #######";
+    title5 "XX##### #######   (3/3) PRINT(OBS)      ####### ####### ####### #######";
     %blank();
     
-    %count(&D,v=&C);
     %if &PRINTOBS=0 %then %do;
         %print(&D, n=&N) ;
         %end;
@@ -64,5 +63,4 @@
         %printobs(&D,n=&N);
         %end;
 
-    options nomprint;
 %MEND ;    

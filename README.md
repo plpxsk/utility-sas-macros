@@ -32,9 +32,11 @@ Quick Start
 2. Data Manipulation
 3. Miscellaneous
 
-### (1) Printing
 
 *shown with most common parameters. details below*
+
+
+### (1) Printing
 
 `%contents(d);`
 

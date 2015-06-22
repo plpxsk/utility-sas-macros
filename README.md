@@ -33,8 +33,7 @@ Quick Start
 3. Miscellaneous
 
 
-*shown with most common parameters. details below*
-
+*Shown with most common parameters. Details below.*
 
 ### (1) Printing
 
@@ -112,8 +111,8 @@ before you call them:
 
 	options mprint;  
 
-(In older versions, this was included in the macro itself, but it has
-been decided to remove this).
+*In older versions, this was included in the macro itself, but it has
+been decided to remove this.*
 
 
 

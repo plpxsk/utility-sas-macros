@@ -31,7 +31,6 @@
 /* OPTIONAL */
 /* in  = ind1 or ind2 or ind1d2 */
 %MACRO merge(d1,d2,by,out,in=0);
-    options mprint;
 
     %sort(&D1, &BY, out=d1);
     %sort(&D2, &BY, out=d2);
@@ -44,6 +43,5 @@
         %if &IN = ind2   %then %do;   if ind2;           %end;
         %if &IN = ind1d2 %then %do;   if ind1 and ind2;  %end;
     run;
-    
-    options nomprint;
+
 %MEND merge ;

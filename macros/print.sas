@@ -28,7 +28,6 @@
 /* n = number of observations */
 /* v = print only these variables*/
 %MACRO PRINT(d,v="",n=all);
-    options mprint;
 
     proc print data = &D
         %if &N^=all %then (obs=&N);
@@ -38,5 +37,4 @@
             %end; 
     run;
 
-    options nomprint;
 %MEND ; 

@@ -27,7 +27,6 @@
 /* OPTIONAL */
 /* v = variable to count */
 %MACRO COUNT(d, v=patid);
-    options mprint;
 
     proc sql; select
         count(unique(&V)) as N_unique_&V, count(&V) as N_total_&V
@@ -35,7 +34,6 @@
         ;
     quit;
 
-    options nomprint;
 %MEND ; 
 
 

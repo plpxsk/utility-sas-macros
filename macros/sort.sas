@@ -24,7 +24,6 @@
 /* d = dataset*/
 /* v = variable(s) */
 %MACRO SORT(d, v, out=0);
-    options mprint;
     
     proc sort data = &D
         %if &OUT ne 0 %then %do;
@@ -35,5 +34,4 @@
         by &V;
     run;
 
-    options nomprint;
 %MEND;    

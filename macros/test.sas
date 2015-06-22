@@ -26,11 +26,9 @@
 /* v         = test variable for which &v = 1 is a go-ahead to run condition */
 /* condition = evaluted when &v = 1. enclose in %str() as needed */
 %macro test(v, condition);
-    options mprint;
 
     %if &V = 1 %then %do ;
         &CONDITION;
         %end;
 
-    options nomprint;
 %mend test ;

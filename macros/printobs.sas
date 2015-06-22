@@ -30,7 +30,6 @@
 /* n = number obs outputted*/
 /* ETC = additional statement, eg to format a variable  */
 %MACRO PRINTOBS(d,v="", n=100, etc="");
-    options mprint ;
 
     proc print data = &D (obs = &N);
         by patid;   id patid;
@@ -44,6 +43,5 @@
             %end;
     run;
 
-    options nomprint;
 %MEND ;      
 

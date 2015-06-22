@@ -103,13 +103,13 @@ Many parameters do not need to be specified. Both of the following will work:
 	%freq(visits, type);
 
 
-By reviewing the SAS log, you can see exactly what the macros are
-doing, since they are wrapped with:
+You can see exactly what the macro is doing by adding the following
+before you call them:
 
-    options mprint;  
-    ...  
-    options nomprint;  
+	options mprint;  
 
+(In older versions, this was included in the macro itself, but it has
+been decided to remove this).
 
 
 

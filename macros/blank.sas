@@ -30,10 +30,8 @@
 data blank;    x="--";     label x = '--'; run ;
 
 %MACRO BLANK(); 
-    options mprint;
 
     proc print data = blank noobs label; run;
     title '';
 
-    options nomprint;
 %MEND ; 

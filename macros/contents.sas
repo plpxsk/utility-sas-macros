@@ -23,10 +23,8 @@
 
 /* d = dataset */
 %MACRO CONTENTS(d);
-    options mprint;
 
     proc contents data = &D ;
     run;
 
-    options nomprint;
 %MEND ;     

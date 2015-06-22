@@ -29,7 +29,6 @@
 /* opts = specify options whcih follow the </> in the <table> statement */
 /* etc  = add another statement */
 %MACRO FREQ(d, v, opts="", etc="");
-    options mprint;
 
     proc freq data=&D;
         table &V
@@ -42,6 +41,5 @@
             %end;
     run;
 
-    options nomprint;
 %MEND;    
 

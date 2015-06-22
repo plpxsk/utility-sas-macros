@@ -20,7 +20,7 @@
     
     proc sql noprint; create table &OUT as
         select * from vacc1
-        group by &G
+        group by &G                     /* must precede <having> */
         having &CONDITIONS
         order by &G
         ;

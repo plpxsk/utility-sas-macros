@@ -39,7 +39,7 @@
         %if &OUT ne "" %then %do ; create table &OUT as %end;
     select 
         %if &G ne "" %then %do;  &G , %end;
-        count(unique(&V)) as N_unique_&V, count(&V) as N_total_&V, count(scrnum)-count(unique(scrnum)) as diff
+        count(unique(&V)) as N_unique_&V, count(&V) as N_total_&V, count(&V)-count(unique(&V)) as diff
         /* for the warning, need &DIFFX */
         into :NN1, :NN2, :DIFFX separated by ''
 

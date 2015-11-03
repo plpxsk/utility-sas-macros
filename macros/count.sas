@@ -21,7 +21,7 @@
 /******************************************************************************/
 
 
-%MACRO COUNTX(d                  /* input dataset*/
+%MACRO COUNT(d                  /* input dataset*/
     , v=patid                    /* OPT: variable to count*/
     , g=""                       /* OPT: group by?*/
     , out=""                     /* OPT: name of output dataset*/

@@ -6,6 +6,40 @@ See [Quick Start](#quick-start) and [Installation](#installation) below.
 
 Feel free to get in touch/send pull requests with ideas for improvements.
 
+Motivation
+===============================================================================
+
+## Example 1
+
+Before:
+
+	proc freq data=mydata;
+		var patid;
+	run;
+	
+After:
+
+	%freq(mydata, patid);
+	
+
+## Example 2
+
+Before:
+
+	proc sort data=data1; by patid; run;
+	proc sort data=data2; by patid; run;
+	
+	data merged;
+		merge data1 data2;
+		by patid;
+	run;
+	
+After:
+
+	%sort(data1, data2, patid);
+	
+		
+
 
 
 Contents

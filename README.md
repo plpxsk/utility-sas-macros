@@ -1,5 +1,5 @@
 # Utility SAS macros
-Pawel Paczuski [AMA] [pavopax.com](http://www.pavopax.com)
+Paul Paczuski [AMA] [pavopax.com](http://www.pavopax.com)
 
 Overview
 ===============================================================================
@@ -24,56 +24,52 @@ Contents
 
 Quick Start
 ===============================================================================
-*See bottom for some quick notes*
 
-
-## The macros are divided into 3 types:  
+There are 3 types of macros:  
 1. Printing - print output to SAS listing (.lst)
 2. Data Manipulation
 3. Miscellaneous
 
 
-*Shown with most common parameters. Details below.*
+The following are shown with the most common parameters. Details follow.
 
 ### (1) Printing
 
-`%contents(d);`
+`%contents(dset);`
 
-macro to run proc contents on a [d]ataset
+macro to run proc contents on DSET
 
-`%count(d,v);` 
+`%count(dset, var);` 
 
-macro to count unique and total observations [default: v=patid] in a
-[d]ataset
+macro to count unique and total observations [default: var=patid] in DSET
 
-`%freq(d,v);`
+`%freq(dset, var);`
 
-macro to do simple proc freq of some [v]ariables in a [d]ataset
+macro to do simple proc freq of VAR's in DSET
 
-`%overview(d);`
+`%overview(dset);`
 
-runs all of the following on a [d]ataset: %contents, %freqmeans[CBAR],
+runs all of the following on DSET: %contents, %freqmeans[CBAR],
 %count, %print, separated by %blank
 
-`%print(d);`
+`%print(dset);`
 
-macro to do simple proc print of a [d]ataset
+macro to do simple proc print of DSET
 
-`%printobs(d,n=100);`
+`%printobs(dset, n=100);`
 
-macro to run proc print with `by patid; id patid;` on a [d]ataset
+macro to run proc print with `by patid; id patid;` on DSET
 
 
 ### (2) Data Manipulation
 
-`%merge(d1,d2,by,out);`
+`%merge(dset1,dset2,by,out);`
 
-macro to do simple data step merge of datasets d1 and d2 by [v]ariable
+macro to do simple data step merge of DSET1 and DSET2
 
-`%sort(d,v, out=0);`
+`%sort(dset,by, out=0);`
 
-macro to do simple proc sort by [v]ariable in a [d]ataset, optionally
-outputting as [out]
+macro to do simple proc sort by BY variable in DSET, output as OUT
 
 
 ### (3) Miscellaneous
@@ -82,10 +78,9 @@ outputting as [out]
 
 macro that creates and prints a blank dataset and also resets titles
 
-`%echo(t,f);`
+`%echo(text,file);`
 
-macro (mostly shell script) to save a [t]ext warning to an output text
-[f]ile
+macro (mostly shell script) to save TEXT to FILE
 
 `%get_prog_name();`
 
@@ -93,16 +88,16 @@ macro that obtains the short name, without `.sas`, of the current SAS
 program
 
 
-`%test(v,condition);`
+`%test(var,condition);`
 
-macro that runs [condition] when [v]ariable is equal to 1
+macro that runs CONDITION when VAR is equal to 1
 
 
 
 ## Notes
 Many parameters do not need to be specified. Both of the following will work:
 
-	%freq(d=visits, v=type);
+	%freq(dset=visits, var=type);
 	%freq(visits, type);
 
 
@@ -118,11 +113,12 @@ been decided to remove this.*
 
 Parameter Dictionary
 ===============================================================================
-d = dataset
+dset = input dataset
 
-v = variable
+var  = variable for proc
 
-[and others]
+by   = by variable for merge or sort
+
 
 
 
@@ -149,8 +145,8 @@ Or add them to your autocalls (get help from an administrator)
 Tests
 ===============================================================================
 
-## tests.sas
-testing program [working]
+## tests.sas [working]
+testing program
 
 tests the following
 * count.sas

@@ -2,10 +2,8 @@
 /* PROD PROGRAM:   get_prog_name.sas
 /* WORK PROGRAM:   get_prog_name.sas
 /* 
-/* PURPOSE:
-    macro that obtains the short name, without `.sas`, of the current SAS
-    program
-
+/* PURPOSE:       macro that obtains the short name, without `.sas`
+                  of the current SAS program
 /* 
 /* SOURCE PRGM:    NONE
 /* INPUT:          NONE
@@ -13,7 +11,7 @@
 /* MACROS USED:    NONE
 /* EXEMPTIONS:     NONE
 /* 
-/* AUTHOR:         Pawel Paczuski
+/* AUTHOR:         Paul Paczuski
 /* CREATION DATE:  06/02/15
 /* 
 /* DETAILS:        

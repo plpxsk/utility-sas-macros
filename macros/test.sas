@@ -10,7 +10,7 @@
 /* MACROS USED:    NONE
 /* EXEMPTIONS:     NONE
 /* 
-/* AUTHOR:         Pawel Paczuski
+/* AUTHOR:         Paul Paczuski
 /* CREATION DATE:  06/11/2015
 /* 
 /* DETAILS:        

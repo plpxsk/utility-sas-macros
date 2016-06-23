@@ -24,7 +24,6 @@
 
 
 %MACRO HAVING(dset, conditions=, group=patid, out=out_having);
-    options mprint;
         
     proc sql noprint; create table &OUT as
         select   *
@@ -34,6 +33,5 @@
         order by &GROUP
         ;
     quit;
-        
-    options nomprint;
+
 %MEND ;     

@@ -6,6 +6,16 @@ See [Quick Start](#quick-start) and [Installation](#installation) below.
 
 Feel free to get in touch/send pull requests with ideas for improvements.
 
+* [Motivation](#motivation)
+* [Quick Start](#quick-start)
+* [Parameter Dictionary](#parameter-dictionary)
+* [Details](#details)
+* [Installation](#installation)
+* [Tests](#tests)
+* [Inspirations](#inspirations)
+
+
+
 Motivation
 ===============================================================================
 
@@ -42,14 +52,6 @@ After:
 
 
 
-Contents
-===============================================================================
-* [Quick Start](#quick-start)
-* [Parameter Dictionary](#parameter-dictionary)
-* [Details](#details)
-* [Installation](#installation)
-* [Tests](#tests)
-* [Inspirations](#inspirations)
 
 
 

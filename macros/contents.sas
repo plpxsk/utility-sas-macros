@@ -2,7 +2,7 @@
 /* PROD PROGRAM:   contents.sas
 /* WORK PROGRAM:   contents.sas
 /* 
-/* PURPOSE:        macro to run proc contents on a (d)ataset
+/* PURPOSE:        macro to run proc contents on DSET
 /* 
 /* SOURCE PRGM:    NONE
 /* INPUT:          NONE
@@ -21,10 +21,9 @@
 /* MODIFICATIONS:  
 /******************************************************************************/
 
-/* d = dataset */
-%MACRO CONTENTS(d);
+%MACRO CONTENTS(dset);
 
-    proc contents data = &D ;
+    proc contents data = &DSET ;
     run;
 
 %MEND ;     

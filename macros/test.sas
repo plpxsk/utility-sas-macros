@@ -2,8 +2,7 @@
 /* PROD PROGRAM:   test.sas
 /* WORK PROGRAM:   test.sas
 /* 
-/* PURPOSE:
-    macro that runs [condition] when [v]ariable is equal to 1
+/* PURPOSE:        macro that runs [condition] when [v]ariable is equal to 1
 /* 
 /* SOURCE PRGM:    NONE
 /* INPUT:          NONE
@@ -23,11 +22,11 @@
 /******************************************************************************/
 
 /* REQUIRED */
-/* v         = test variable for which &v = 1 is a go-ahead to run condition */
-/* condition = evaluted when &v = 1. enclose in %str() as needed */
-%macro test(v, condition);
+/* var       = test variable for which VAR = 1 is a go-ahead to run condition */
+/* condition = evaluted when VAR = 1. enclose in %str() as needed */
+%macro test(var, condition);
 
-    %if &V = 1 %then %do ;
+    %if &VAR = 1 %then %do ;
         &CONDITION;
         %end;
 

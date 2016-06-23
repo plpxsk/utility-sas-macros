@@ -2,13 +2,12 @@
 /* PROD PROGRAM:   overview.sas
 /* WORK PROGRAM:   overview.sas
 /* 
-/* PURPOSE:
-    runs all of the following on a (d)ataset:
-    %count
-    %contents,
-    %freqmeans[CBAR]
-    %print(n=40)
-        all of these separated by %blank
+/* PURPOSE:        runs all of the following on &DSET
+                    %count
+                    %contents,
+                    %freqmeans[CBAR]
+                    %print(n=40)
+                        all of these separated by %blank
 
 /* 
 /* SOURCE PRGM:    NONE
@@ -28,7 +27,7 @@
 /* MODIFICATIONS:  
 /******************************************************************************/
    
-/* d = dataset */
+/* dset = dataset */
 
 /* OPTIONAL*/
 /* n = number of observations (default = 40)*/
@@ -41,15 +40,15 @@
     title5 "XX##### #######   (1/3) COUNT + CONTENTS      ####### ####### ####### #######";
     %blank();
     
-    %count(&D,v=&C);
-    %contents(&D);
+    %count(&DSET,v=&C);
+    %contents(&DSET);
 
     title "";
     title2 "";
     title5 "XX##### #######   (2/3) FREQMEANS      ####### ####### ####### #######";
     %blank();
     
-    %freqmeans(&D);
+    %freqmeans(&DSET);
 
     title "";
     title2 "";
@@ -57,10 +56,10 @@
     %blank();
     
     %if &PRINTOBS=0 %then %do;
-        %print(&D, n=&N) ;
+        %print(&DSET, n=&N) ;
         %end;
     %if &PRINTOBS=1 %then %do;
-        %printobs(&D,n=&N);
+        %printobs(&DSET,n=&N);
         %end;
 
 %MEND ;    

@@ -2,8 +2,7 @@
 /* PROD PROGRAM:   merge.sas
 /* WORK PROGRAM:   merge.sas
 /* 
-/* PURPOSE:
-    macro to do simple data step merge of datasets d1 and d2 by (v)ariable
+/* PURPOSE:        macro to do simple data step merge of DSET1 and DSET2 
 /* 
 /* SOURCE PRGM:    NONE
 /* INPUT:          NONE
@@ -11,7 +10,7 @@
 /* MACROS USED:    NONE
 /* EXEMPTIONS:     NONE
 /* 
-/* AUTHOR:         Pawel Paczuski
+/* AUTHOR:         Paul Paczuski
 /* CREATION DATE:  01/13/15
 /* 
 /* DETAILS:        
@@ -23,25 +22,25 @@
 /******************************************************************************/
 
 /* REQUIRED */
-/* d1  = dataset 1 */
-/* d2  = dataset 2 */
-/* by  = by variable(s) */
-/* out = output dataset */
+/* DSET1  = dataset 1 */
+/* DSET2  = dataset 2 */
+/* BY     = by variable(s) */
+/* OUT    = output dataset */
 
 /* OPTIONAL */
-/* in  = ind1 or ind2 or ind1d2 */
-%MACRO merge(d1,d2,by,out,in=0);
+/* in  = in1 or in2 or inboth */
+%MACRO merge(DSET1, DSET2, by, out, in=0);
 
-    %sort(&D1, &BY, out=d1);
-    %sort(&D2, &BY, out=d2);
+    %sort(&DSET1, &BY, out=DSET1);
+    %sort(&DSET2, &BY, out=DSET2);
 
     data &OUT;
-        merge d1 (in=ind1) d2 (in=ind2);
+        merge DSET1 (in=ind1) DSET2 (in=ind2);
         by &BY;
 
-        %if &IN = ind1   %then %do;   if ind1;           %end;
-        %if &IN = ind2   %then %do;   if ind2;           %end;
-        %if &IN = ind1d2 %then %do;   if ind1 and ind2;  %end;
+        %if &IN = in1    %then %do;   if ind1;           %end;
+        %if &IN = in2    %then %do;   if ind2;           %end;
+        %if &IN = inboth %then %do;   if ind1 and ind2;  %end;
     run;
 
 %MEND merge ;

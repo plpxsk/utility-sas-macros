@@ -3,7 +3,7 @@
 /* WORK PROGRAM:   count.sas
 /* 
 /* PURPOSE:        macro to count unique and total observations
-                    (default: v=patid) in a (d)ataset
+                    (default: v=patid) in a dataset
 /* 
 /* SOURCE PRGM:    NONE
 /* INPUT:          NONE
@@ -21,31 +21,31 @@
 /******************************************************************************/
 
 
-%MACRO COUNT(d                   /* input dataset*/
-    , v=patid                    /* OPTIONAL: variable to count*/
-    , g=""                       /* OPTIONAL: <group by> variable*/
+%MACRO COUNT(dset                /* input dataset*/
+    , var=patid                  /* OPTIONAL: variable to count*/
+    , group=""                   /* OPTIONAL: <group by> variable*/
     , out=out_count              /* name of output dataset*/
     , warn=0                     /* OPTIONAL: set to 1 to warn if duplicates exist*/
     );
 
     
-    %put '%count(d, v=patid, g=) counts <v>ariable in <d>ataset,';
-    %put 'with optional <g>roup variable';
-    %put '... warn=1 warns if duplicates exist [beta; may not work with <g>roup]';
+    %put '%count(dset, var=patid, group=) counts <var> in <dset>,';
+    %put 'with optional <group> variable';
+    %put '... warn=1 warns if duplicates exist [beta; may not work with <group>]';
 
 
     
-    title6 "Dataset: &D" ;
+    title6 "Dataset: &DSET" ;
 
     /* [I like the dashed line in proc sql output...] */
-    proc sql; select %if &G ne "" %then %do;  &G , %end;
-          count(unique(&V))           as N_unique_&V label "Unique &V (N)"
-        , count(&V)                   as N_total_&V  label "Total &V (N)"
-        , count(&V)-count(unique(&V)) as Diff        label "Difference"
+    proc sql; select %if &GROUP ne "" %then %do;  &GROUP , %end;
+          count(unique(&VAR))             as N_unique_&VAR label "Unique &VAR (N)"
+        , count(&VAR)                     as N_total_&VAR  label "Total &VAR (N)"
+        , count(&VAR)-count(unique(&VAR)) as Diff          label "Difference"
 
-        from &D
+        from &DSET
             
-        %if &G ne "" %then %do;  group by &G %end;
+        %if &GROUP ne "" %then %do;  group by &GROUP %end;
         ;
     quit;
 
@@ -53,14 +53,14 @@
     
     /* [...thats why I'm repeating this block of code:]  */
     proc sql; create table &OUT as 
-        select %if &G ne "" %then %do;  &G , %end;
-          count(unique(&V))           as N_unique_&V
-        , count(&V)                   as N_total_&V
-        , count(&V)-count(unique(&V)) as Diff
+        select %if &GROUP ne "" %then %do;  &GROUP , %end;
+          count(unique(&VAR))             as N_unique_&VAR
+        , count(&VAR)                     as N_total_&VAR
+        , count(&VAR)-count(unique(&VAR)) as Diff
 
-        from &D
+        from &DSET
             
-        %if &G ne "" %then %do;  group by &G %end;
+        %if &GROUP ne "" %then %do;  group by &GROUP %end;
         ;
     quit;
 

@@ -2,7 +2,7 @@
 /* PROD PROGRAM:   sort.sas
 /* WORK PROGRAM:   sort.sas
 /* 
-/* PURPOSE:        macro to do simple proc sort by (v)ariable in a (d)ataset
+/* PURPOSE:        macro to do simple proc sort on DSET
 /* 
 /* SOURCE PRGM:    NONE
 /* INPUT:          NONE
@@ -21,17 +21,15 @@
 /* MODIFICATIONS:  
 /******************************************************************************/
 
-/* d = dataset*/
-/* v = variable(s) */
-%MACRO SORT(d, v, out=0);
+%MACRO SORT(dset, by, out=0);
     
-    proc sort data = &D
+    proc sort data = &DSET
         %if &OUT ne 0 %then %do;
         out=&OUT;
         %end;
         ;
 
-        by &V;
+        by &BY;
     run;
 
 %MEND;    

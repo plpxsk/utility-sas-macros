@@ -2,7 +2,7 @@
 /* PROD PROGRAM:   freq.sas
 /* WORK PROGRAM:   freq.sas
 /* 
-/* PURPOSE:        macro to do simple proc freq of some (v)ariables in a (d)ataset
+/* PURPOSE:        macro to do simple proc freq of some <var>'s in <dset>
 /* 
 /* SOURCE PRGM:    NONE
 /* INPUT:          NONE
@@ -10,7 +10,7 @@
 /* MACROS USED:    NONE
 /* EXEMPTIONS:     NONE
 /* 
-/* AUTHOR:         Pawel Paczuski
+/* AUTHOR:         Paul Paczuski
 /* CREATION DATE:  01/09/15
 /* 
 /* DETAILS:        
@@ -22,21 +22,18 @@
 /******************************************************************************/
 
 
-/* d = dataset */
-/* v = variable*/
-
 /* OPTIONAL: */
-/* opts = specify options whcih follow the </> in the <table> statement */
+/* options = specify options whcih follow the </> in the <table> statement */
 /* etc  = add another statement */
-%MACRO FREQ(d, v, opts="", etc="");
+%MACRO FREQ(dset, var, options="", etc="");
 
-    proc freq data=&D;
-        table &V
+    proc freq data=&DSET;
+        table &VAR
             %if &OPTS ne "" %then %do; 
             / &OPTS; 
             %end;
         ;
-        %if &etc ne "" %then %do;
+        %if &ETC ne "" %then %do;
             &ETC. ;
             %end;
     run;

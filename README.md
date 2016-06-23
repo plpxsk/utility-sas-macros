@@ -56,9 +56,12 @@ Contents
 Quick Start
 ===============================================================================
 
-There are 3 types of macros:  
+There are 3 types of macros:
+
 1. Printing - print output to SAS listing (.lst)
+
 2. Data Manipulation
+
 3. Miscellaneous
 
 

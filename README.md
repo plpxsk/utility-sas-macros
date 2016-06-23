@@ -1,6 +1,3 @@
-# Utility SAS macros
-Paul Paczuski [AMA] [pavopax.com](http://www.pavopax.com)
-
 Overview
 ===============================================================================
 A collection of simple utility SAS macros to speed up data exploration.

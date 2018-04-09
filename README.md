@@ -33,7 +33,6 @@ Before:
 After:
 
 	%freq(mydata, patid);
-	
 
 ## Example 2
 
@@ -49,14 +48,7 @@ Before:
 	
 After:
 
-	%sort(data1, data2, patid);
-	
-		
-
-
-
-
-
+	%merge(data1, data2, patid);
 
 Quick Start
 ===============================================================================

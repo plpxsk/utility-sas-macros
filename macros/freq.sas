@@ -23,14 +23,14 @@
 
 
 /* OPTIONAL: */
-/* options = specify options whcih follow the </> in the <table> statement */
+/* options = specify options which follow the </> in the <table> statement */
 /* etc  = add another statement */
 %MACRO FREQ(dset, var, options="", etc="");
 
     proc freq data=&DSET;
         table &VAR
-            %if &OPTS ne "" %then %do; 
-            / &OPTS; 
+            %if &OPTIONS ne "" %then %do; 
+            / &OPTIONS; 
             %end;
         ;
         %if &ETC ne "" %then %do;
